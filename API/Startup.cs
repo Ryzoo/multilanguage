@@ -25,7 +25,7 @@ namespace API
         {
             services.AddLogging()
                 .AddOptions()
-                .Configure<DbSettings>(_config.GetSection(DbSettings.Name))
+                .Configure<DbSettings>(props => _config.GetSection("DbSettings").Bind(props))
                 .AddSingleton<DatabaseContext>()
                 .AddTransient<IContentLanguageService, ContentLanguageService>()
                 .AddTransient<ICarRepository, CarRepository>()

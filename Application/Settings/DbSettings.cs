@@ -4,7 +4,7 @@
     {
         public const string Name = "DbSettings";
         
-        public string ConnectionString;
-        public string Database;
+        public string ConnectionString { get; set; }
+        public string Database { get; set; }
     }
 }
