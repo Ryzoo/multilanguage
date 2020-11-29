@@ -26,7 +26,7 @@ namespace Infrastructure.Database.Models
                 BasePrice = model.BasePrice,
                 CarEquipmentVersion = languageService
                     .PrepareContent(model.CarEquipmentVersion)
-                    .ToProjection()
+                    ?.ToProjection()
             };
         }
     }

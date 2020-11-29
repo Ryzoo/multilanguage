@@ -24,8 +24,10 @@ namespace Application.Services
         
         public T PrepareContent<T>(ICollection<T> elements) where T : ILanguageContent
         {
-            var currentCulture = CultureInfo.CurrentCulture.Name;
-            return _defaultLangHandler.Handle(elements, currentCulture);
+            if(elements == null)
+                return default;
+            
+            return _defaultLangHandler.Handle(elements, CultureInfo.CurrentCulture.Name);
         }
     }
 }

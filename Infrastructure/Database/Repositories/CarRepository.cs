@@ -51,7 +51,8 @@ namespace Infrastructure.Database.Repositories
                 new CarModel(){Name="Skoda - only ze", BasePrice = 200, CarEquipmentVersion = new List<CarEquipmentVersionModel>()
                 {
                     new CarEquipmentVersionModel(){Name = "Zeee", Description = "Zeeeeee", LangCode = "ze"},
-                }}
+                }},
+                new CarModel(){Name="Other", BasePrice = 200}
             };
             
             await _context.Cars
