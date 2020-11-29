@@ -7,7 +7,7 @@ namespace Application.ChainOfResponsibility.Language
     {
         public override T Handle<T>(ICollection<T> request)
         {
-            var element = request.FirstOrDefault(x => x.LangCode == "en-US");
+            var element = request.FirstOrDefault(x => x.LangCode == "en");
 
             if (element != null)
                 return element;

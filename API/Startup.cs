@@ -1,3 +1,6 @@
+using System;
+using System.Globalization;
+using System.Linq;
 using Application.Interfaces.Database.Repositories;
 using Application.Interfaces.Services;
 using Application.Services;
@@ -35,8 +38,12 @@ namespace API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var supportedCultures = new[] { "pl", "en", "de", "ze" };
-            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures &~ CultureTypes.NeutralCultures)
+                .Where(cul => !String.IsNullOrEmpty(cul.Name))
+                .Select(x => x.Name)
+                .ToArray();
+            
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture("pl")
                 .AddSupportedCultures(supportedCultures)
                 .AddSupportedUICultures(supportedCultures);
 

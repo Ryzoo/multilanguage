@@ -14,7 +14,7 @@ namespace Application.ChainOfResponsibility.Language
             if (element != null)
                 return element;
             
-            return base.Handle(request);
+            return Handle(request);
         }
     }
 }
