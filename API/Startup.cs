@@ -43,7 +43,8 @@ namespace API
                 .Select(x => x.Name)
                 .ToArray();
             
-            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture("pl")
+            var localizationOptions = new RequestLocalizationOptions()
+                .SetDefaultCulture("pl")
                 .AddSupportedCultures(supportedCultures)
                 .AddSupportedUICultures(supportedCultures);
 

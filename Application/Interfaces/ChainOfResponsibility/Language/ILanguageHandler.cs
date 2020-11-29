@@ -6,7 +6,6 @@ namespace Application.Interfaces.ChainOfResponsibility.Language
     public interface ILanguageHandler
     {
         ILanguageHandler SetNext(ILanguageHandler handler);
-        T Handle<T>(ICollection<T> request)
-        where T : ILanguageContent;
+        T Handle<T>(ICollection<T> request) where T : ILanguageContent;
     }
 }

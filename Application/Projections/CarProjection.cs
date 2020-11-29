@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Application.Projections
+﻿namespace Application.Projections
 {
     public class CarProjection
     {

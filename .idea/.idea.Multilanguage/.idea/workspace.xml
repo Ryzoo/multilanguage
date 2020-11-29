@@ -9,12 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bad765b-b326-4719-817c-8ea2e999bdba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multilanguage/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2020_11_08__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multilanguage/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2020_11_08__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multilanguage/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multilanguage/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/CarsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/CarsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/ContentLanguageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/ContentLanguageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Models/CarModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Models/CarModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Repositories/CarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Repositories/CarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/ChainOfResponsibility/Language/ILanguageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interfaces/ChainOfResponsibility/Language/ILanguageHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Projections/CarProjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Projections/CarProjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,6 @@
         <option value="$PROJECT_DIR$/Infrastructure/Database/Repositories/StateRepository.cs" />
         <option value="$PROJECT_DIR$/Application/Interfaces/Database/Repositories/IStateRepository.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Interfaces/Database/Repositories/ICarRepository.cs" />
-        <option value="$PROJECT_DIR$/Application/Projections/CarProjection.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Interfaces/Database/Models.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Interfaces/Database/Models/ILanguageContent.cs" />
         <option value="$PROJECT_DIR$/Application/Interfaces/ILanguageContent.cs" />
@@ -57,18 +56,20 @@
         <option value="$PROJECT_DIR$/Infrastructure/Database/DatabaseContext.cs" />
         <option value="$PROJECT_DIR$/Application/Settings/DbSettings.cs" />
         <option value="$PROJECT_DIR$/Application/Interfaces/Database/Models/ILanguageContent.cs" />
-        <option value="$PROJECT_DIR$/Application/Interfaces/ChainOfResponsibility/Language/ILanguageHandler.cs" />
         <option value="$PROJECT_DIR$/Application/Projections/CarEquipmentProjection.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Database/Models/CarEquipmentVersionModel.cs" />
-        <option value="$PROJECT_DIR$/API/Controllers/CarsController.cs" />
         <option value="$PROJECT_DIR$/Application/ChainOfResponsibility/Language/DefaultLanguageHandler.cs" />
         <option value="$PROJECT_DIR$/Application/ChainOfResponsibility/Language/EnLanguageHandler.cs" />
-        <option value="$PROJECT_DIR$/API/Startup.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Database/Repositories/CarRepository.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Database/Models/CarModel.cs" />
         <option value="$PROJECT_DIR$/Application/Interfaces/Services/IContentLanguageService.cs" />
         <option value="$PROJECT_DIR$/Application/ChainOfResponsibility/Language/LanguageHandler.cs" />
         <option value="$PROJECT_DIR$/Application/Services/ContentLanguageService.cs" />
+        <option value="$PROJECT_DIR$/API/Controllers/CarsController.cs" />
+        <option value="$PROJECT_DIR$/API/Program.cs" />
+        <option value="$PROJECT_DIR$/API/Startup.cs" />
+        <option value="$PROJECT_DIR$/Application/Projections/CarProjection.cs" />
+        <option value="$PROJECT_DIR$/Application/Interfaces/ChainOfResponsibility/Language/ILanguageHandler.cs" />
       </list>
     </option>
   </component>
@@ -132,7 +133,7 @@
       <workItem from="1606557714885" duration="11651000" />
       <workItem from="1606570888848" duration="3488000" />
       <workItem from="1606575398663" duration="8727000" />
-      <workItem from="1606656122143" duration="772000" />
+      <workItem from="1606656122143" duration="1117000" />
     </task>
     <task id="LOCAL-00001" summary="fixes">
       <created>1606646807412</created>
@@ -155,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606648613795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor">
+      <created>1606657006362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606657006362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,10 +300,10 @@
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="589" y="271" key="Rider.ProjectTemplateDialog.Size/74.0.1846.1080@74.0.1846.1080" timestamp="1606559389850" />
-    <state x="589" y="254" key="Vcs.Push.Dialog.v2" timestamp="1606648615105">
+    <state x="589" y="254" key="Vcs.Push.Dialog.v2" timestamp="1606657008226">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
-    <state x="589" y="254" key="Vcs.Push.Dialog.v2/74.0.1846.1080@74.0.1846.1080" timestamp="1606648615105" />
+    <state x="589" y="254" key="Vcs.Push.Dialog.v2/74.0.1846.1080@74.0.1846.1080" timestamp="1606657008226" />
     <state width="968" height="548" key="XDebugger.FullValuePopup" timestamp="1606580074150">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
