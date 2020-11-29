@@ -12,19 +12,16 @@ namespace Application.Services
 
         public ContentLanguageService()
         {
-            var plLangHandler = new PlLanguageHandler();
-            var enLangHandler = new EnLanguageHandler();
-            var defaultLangHandler = new DefaultLanguageHandler();
-
-            enLangHandler.SetNext(plLangHandler);
-            defaultLangHandler.SetNext(enLangHandler);
+            _defaultLangHandler = new DefaultLanguageHandler();
             
-            _defaultLangHandler = defaultLangHandler;
+            _defaultLangHandler
+                .SetNext(new EnLanguageHandler())
+                .SetNext(new PlLanguageHandler());
         }
         
         public T PrepareContent<T>(ICollection<T> elements) where T : ILanguageContent
         {
-            if(elements == null)
+            if(elements == null || elements.Count == 0)
                 return default;
             
             return _defaultLangHandler.Handle(elements, CultureInfo.CurrentCulture.Name);

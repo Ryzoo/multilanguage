@@ -23,7 +23,7 @@ namespace Infrastructure.Database.Repositories
         {
             return await _context.Cars
                 .Find(_ => true)
-                .Project(x => CarModel.ToProjection(x, _languageService))
+                .Project(x => x.ToProjection(_languageService))
                 .ToListAsync();
         }
         

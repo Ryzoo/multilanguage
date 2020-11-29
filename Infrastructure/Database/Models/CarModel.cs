@@ -17,15 +17,15 @@ namespace Infrastructure.Database.Models
         public decimal BasePrice { get; set; }
         public ICollection<CarEquipmentVersionModel> CarEquipmentVersion { get; set; }
 
-        public static CarProjection ToProjection(CarModel model, IContentLanguageService languageService)
+        public CarProjection ToProjection(IContentLanguageService languageService)
         {
             return new CarProjection()
             {
-                Id = model.Id,
-                Name = model.Name,
-                BasePrice = model.BasePrice,
+                Id = Id,
+                Name = Name,
+                BasePrice = BasePrice,
                 CarEquipmentVersion = languageService
-                    .PrepareContent(model.CarEquipmentVersion)
+                    .PrepareContent(CarEquipmentVersion)
                     ?.ToProjection()
             };
         }

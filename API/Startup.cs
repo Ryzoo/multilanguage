@@ -52,7 +52,6 @@ namespace API
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             
-            
             app.UseRouting()
                 .UseCors("AllowAll")
                 .UseEndpoints(endpoints => { endpoints.MapControllers(); });
