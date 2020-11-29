@@ -27,6 +27,14 @@ namespace Infrastructure.Database.Repositories
                 .ToListAsync();
         }
         
+        public async Task<CarProjection> GetCarByIdAsync(string id)
+        {
+            return await _context.Cars
+                .Find(x => x.Id == id)
+                .Project(x => x.ToProjection(_languageService))
+                .FirstOrDefaultAsync();
+        }
+        
         public async Task InitializeCarsAsync()
         {
             await _context.Cars

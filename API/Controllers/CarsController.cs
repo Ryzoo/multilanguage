@@ -23,6 +23,12 @@ namespace API.Controllers
             return await _carRepository.GetCarsAsync();
         }
         
+        [HttpGet("{id}")]
+        public async Task<CarProjection> GetCars(string id)
+        {
+            return await _carRepository.GetCarByIdAsync(id);
+        }
+        
         [HttpPost]
         public async Task InitializeCars()
         {

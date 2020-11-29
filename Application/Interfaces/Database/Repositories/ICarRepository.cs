@@ -7,6 +7,7 @@ namespace Application.Interfaces.Database.Repositories
     public interface ICarRepository
     {
         Task<ICollection<CarProjection>> GetCarsAsync();
+        Task<CarProjection> GetCarByIdAsync(string id);
         Task InitializeCarsAsync();
     }
 }
