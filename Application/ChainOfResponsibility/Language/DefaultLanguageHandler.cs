@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Application.Models;
+using Application.Interfaces.Database.Models;
 
 namespace Application.ChainOfResponsibility.Language
 {

@@ -25,6 +25,7 @@ namespace API
         {
             services.AddLogging()
                 .AddOptions()
+                .AddLocalization()
                 .Configure<DbSettings>(props => _config.GetSection("DbSettings").Bind(props))
                 .AddSingleton<DatabaseContext>()
                 .AddTransient<IContentLanguageService, ContentLanguageService>()
@@ -34,16 +35,18 @@ namespace API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-                app.UseDeveloperExceptionPage();
-            
-            var supportedCultures = new[] { "pl", "en-US", "de" };
+            var supportedCultures = new[] { "pl", "en", "de", "ze" };
             var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
                 .AddSupportedCultures(supportedCultures)
                 .AddSupportedUICultures(supportedCultures);
 
-            app.UseRequestLocalization(localizationOptions)
-                .UseRouting()
+            app.UseRequestLocalization(localizationOptions);
+                
+            if (env.IsDevelopment())
+                app.UseDeveloperExceptionPage();
+            
+            
+            app.UseRouting()
                 .UseCors("AllowAll")
                 .UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

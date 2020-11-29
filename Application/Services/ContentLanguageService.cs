@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using Application.ChainOfResponsibility.Language;
+using Application.Interfaces.Database.Models;
 using Application.Interfaces.Services;
-using Application.Models;
 
 namespace Application.Services
 {

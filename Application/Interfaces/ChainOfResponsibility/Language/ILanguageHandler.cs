@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Application.Models;
+using Application.Interfaces.Database.Models;
 
 namespace Application.Interfaces.ChainOfResponsibility.Language
 {

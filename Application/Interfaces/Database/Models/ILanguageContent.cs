@@ -1,4 +1,4 @@
-﻿namespace Application.Models
+﻿namespace Application.Interfaces.Database.Models
 {
     public interface ILanguageContent
     {
